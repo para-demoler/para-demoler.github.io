@@ -1,0 +1,1183 @@
+/* RESETEO CSS */
+
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: var(--color1);
+}
+
+/*************************************** ESTILOS GENERALES ********/
+
+/* Flashlight Overlay */
+
+/*
+
+:root {
+    cursor: none;
+    --cursorX: 50vw;
+    --cursorY: 50vh;
+  }
+  :root:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    pointer-events: none;
+    background: radial-gradient(
+      circle 10vmax at var(--cursorX) var(--cursorY),
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,.5) 80%,
+      rgba(0,0,0,.95) 100%
+    )
+  }
+
+  VER QUÉ PEDO */
+
+
+/*------------------------------------------------------------------------------------------------------------ VARIABLES ••••••••••••••••••••••••*/
+
+:root {
+
+
+    --color1: #fff;
+    --color2: #f00;
+    --color3: #000;
+
+    --menu-speed: 3s; 
+
+    
+}
+
+/*------------------------------------------------------------------------------------------------------------ FUENTES ••••••••••••••••••••••••*/
+
+@font-face {
+    font-family: luchita;
+    src: url(fuentes/luchita.ttf)
+  }
+
+@font-face {
+    font-family: mars;
+    src: url(fuentes/MarsAttacks.ttf);
+  }
+
+@font-face {
+    font-family: frank;
+    src: url(fuentes/youngfrank.ttf);
+  }
+
+/*-------------------------------------------------------------------------------------------------------------- INDEX ••••••••••••••••••••••••*/
+
+.container-1 {
+
+    display: flex;
+    flex-wrap: wrap;
+
+    padding: 0;
+    margin: 10vh;
+    height: 70vh;
+
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    overflow: hidden;
+
+}
+
+.box-1 {
+    overflow: hidden;
+}
+
+#logo{
+    height: 70vh;
+}
+
+
+
+/*-- • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • PÁGINA DE INICIO • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • */
+
+
+/*--------------------------------------------------------------------------------------------------------------------------//////////////////////////// BODY */
+
+.body-inicio {
+
+
+    display: flex;
+    flex-wrap: wrap;
+
+    flex-direction: column;
+
+    background-color: var(--color1);
+    padding: 0vh;
+    margin: 0vh;
+
+
+    
+}
+
+/*----------------------------------------------------------------------------------------------{ ••• HAMBURGUESA - MENÚ */
+
+
+/*LISTA*/
+
+ul li a {
+
+    background-color: var(--color1);
+
+    font-family: luchita;
+    font-size: 8vh;
+    
+    display: block;
+    color: var(--color3);
+    text-align: center;
+    padding: 0.2rem 0.8rem;
+    text-decoration: none;
+  }
+
+
+/* LISTA (carrito) */  
+
+ul li section div a#carrito{
+    justify-content: start;
+    align-items: baseline;
+}
+
+/* CHECK BOX */
+
+.menu-wrap {
+    position: fixed;
+    z-index: 4;
+  }
+  
+.menu-wrap .toggler {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+  }
+  
+.menu-wrap .hamburger {
+    position: absolute;
+    top: 1.5vh;
+    left: 0;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    padding: 1rem;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+/* HAMBURGUESA */
+.menu-wrap .hamburger > div {
+    position: relative;
+    flex: none;
+    width: 100%;
+    height: 2px;
+    background: #f00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+  }
+  
+  /* LÍNEA superior e inferior */
+
+  .menu-wrap .hamburger > div::before,
+  .menu-wrap .hamburger > div::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -10px;
+    width: 100%;
+    height: 2px;
+    background: inherit;
+  }
+  
+  /* LÍNEA inferior */
+  .menu-wrap .hamburger > div::after {
+    top: 10px;
+  }
+  
+  /* ANIMACIÓN */
+  .menu-wrap .toggler:checked + .hamburger > div {
+    transform: rotate(135deg);
+  }
+  
+  /* CRUZ */
+  .menu-wrap .toggler:checked + .hamburger > div:before,
+  .menu-wrap .toggler:checked + .hamburger > div:after {
+    top: 0;
+    transform: rotate(90deg);
+
+  }
+  
+  /* ROTACIÓN */
+  .menu-wrap .toggler:checked:hover + .hamburger > div {
+    transform: rotate(225deg)
+  }
+  
+  /* CONTROL (show menu) */
+  .menu-wrap .toggler:checked ~ .menu {
+    visibility: visible;
+  }
+  
+  .menu-wrap .toggler:checked ~ .menu > div {
+    transform: scale(1);
+    transition-duration: var(--menu-speed);
+  }
+  
+  .menu-wrap .toggler:checked ~ .menu > div > div {
+    opacity: 1;
+    transition: opacity 0.4s ease 0.4s;
+  }
+  
+  .menu-wrap .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .menu-wrap .menu > div {
+    background: var(--color1);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+    transition: all 0.4s ease;
+  }
+  
+  .menu-wrap .menu > div > div {
+    text-align: center;
+    max-width: 100%;
+    max-height: 100%;
+    transition: opacity 0.4s ease;
+  }
+  
+  .menu-wrap .menu > div > div > ul > li {
+    list-style: none;
+    color: #f00;
+    padding: 1vh;
+  }
+  
+  .menu-wrap .menu > div > div > ul > li > a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.4s ease;
+  }
+
+  .menu-wrap .menu > div > div > ul > li > a:hover {
+    color: #000;
+    transition: color 0.4s ease;
+  }
+
+/* CONTENEDOR INFERIOR */
+
+.container-4 {
+
+    display: flex;
+    flex-wrap: wrap;
+
+   
+    /*align-items: center;*/
+    flex-direction: column;
+
+    background-color: var(--color1);
+
+    margin: 0;
+    height: auto;
+
+}
+
+.rashitosdiv {
+
+    background-color: transparent;
+    height: 4vh;
+
+}
+
+#rashitos {
+    background-color: transparent;
+    width: 100%;
+    /*margin-bottom: -3vh;*/
+}
+
+.carritodiv {
+
+    background-color: var(--color2);
+
+
+}
+
+.carritodiv a {
+    background-color: var(--color2);
+}
+
+#carrito {
+
+    background-color: var(--color2);
+    fill: var(--color3);
+
+    height: 5vh;
+
+    margin-top: 4vh;
+}
+
+#carrito:hover {
+
+    transition: all 1s ease;
+    transform: rotate(360deg) scale(1.3);
+    fill: #000;
+}
+
+.estrellitasdiv {
+
+    background-color: var(--color2)
+
+
+}
+
+#estrellitas {
+
+    background-color: var(--color2);
+    color: var(--color1);
+
+    height: 2vh;
+
+    margin-top: 1vh;
+
+}
+
+.contactodiv {
+
+    background-color: var(--color2);
+
+
+}
+
+nav.contactodiv a {
+
+    background-color: transparent;
+    color: var(--color1);
+
+    font-family: luchita;
+    font-size: 4vh;
+    text-decoration: none;
+
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+
+    height: 6vh;
+
+}
+
+nav.contactodiv a:hover {
+
+    transition: all 1s ease;
+    transform: rotate(360deg) scale(1.3);
+
+}
+
+/* { ••• TERMINA: HAMBURGUESA - MENÚ ----------------------*/
+
+/* ¡TE HAS GANADO 5 MIN DE DESCANSO! */     
+
+/*----  ---------------------------------------------------
+------                                                   --
+--      --------  -------------------------------------  --
+----------------  -----------  --                --      --
+--  --      - --               --  ------------  --  --  --
+--  --  --  - ---------------------------------      --  --
+--  --  --    --                                 --  --  --
+--  --  --------  -------  ------------------------  --  --
+--  --            -------             --         --      --
+--  --------------------------------  --  -----------------
+--  --            --                                     --         <-
+--  ------------  --  ---------------------------------  --
+--                --                                     --
+--  ------------  --  ---------------------------------  --
+--                    --                                 ----
+--------  --------------  --------------  -------------------
+--                        --         ---                   --
+--  -------------------------------  -------------------   --
+--                            -----                        --  <----- ¡Selecciona estas dos líneas con el cursor y revela el laberinto! Empieza por el lado izquierdo...
+-------------------------------------------------------------
+
+
+/*----------------------------------------------------------------------------------------------{ ••• DEMOLER / VISTA PRINCIPAL */
+
+
+.container-3 {
+
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+
+    overflow: hidden;
+
+    
+}
+
+/*.demolerdiv {
+
+    display: flex;
+    flex-wrap: wrap;
+
+    background-color: transparent;
+    opacity: 60%;
+
+    margin: 10vh;
+    height: 100vh;
+    justify-content: center;
+
+    overflow: hidden;
+
+}*/
+
+
+.demolerdiv {
+
+    top: 0;
+    left: 0;
+
+    position: relative;
+
+    margin: auto;
+    background-color: transparent;
+    z-index: 2;
+}
+
+#demoler {
+
+    margin-top: 0;
+
+    height: 70vh;
+    background-color: transparent;
+    
+    z-index: 1;
+
+}
+
+.video-container {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    
+}
+
+#celula {
+    position: relative;
+    left: -100px;
+    height: inherit;
+}
+
+.color-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    height: 800%;
+} /* ------ No junciona :/ */
+
+.sangre {
+    background-color: transparent;
+    z-index: 3;
+}
+
+#sangrita {
+    background-color: transparent;
+    margin-bottom: -2vh;
+}
+
+  /*  @media (max-width: 750px) {
+        #celula {
+            width: 100%;
+        }
+        body {
+            background: url('poster.jpg');
+            background-size: cover;
+        }
+    }
+
+    */
+
+/*----------------------------------------------------------------------------------------------{ ••• ABOUT */
+
+
+/* CONTENEDOR */
+
+.container-2 {
+
+    display: flex;
+    flex-wrap: wrap;
+
+    padding: 0vh;
+    margin: 0vh;
+
+    background-color: #f00;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+/* TEXTO */
+
+.textodiv {
+    
+    background-color: transparent;
+}
+
+#texto {
+
+    text-align: left;
+    color: var(--color1);
+    background-color: transparent;
+
+    margin: 6vh;
+
+}
+
+/* IMÁGEN */
+
+.mariosdiv {
+
+    height: 25vh;
+    width: 80%;
+    background-color: transparent;
+}
+
+#marios {
+
+    background-color: transparent;
+    width: 100%;
+
+}
+
+/* { ••• TERMINA: DEMOLER / VISTA PRINCIPAL y ABOUT ----------------------*/
+
+
+/* DESPUÉS DEL SIGUIENTE DESCANSO EMPIEZAN LAS PÁGINAS DE ARTISTA */
+
+/*--------------------------------------------------------------------•                                                      •-----------------------------------------------------
+-----------------------------------------------------------------------•                                                   •-------------------------------------------------------
+------------------------------------------------------------------------•                                                 •--------------------------------------------------------
+------------------------------------------------------------------------•                                                •---------------------------------------------------------
+-----------------------------------------------------------------------•                                                 •---------------------------------------------------------
+---------------------------------------------------------------------•                                                   •---------------------------------------------------------
+------------------------------------------------------------------•                                                       •--------------------------------------------------------
+---------------------------------------------------------------•                                                           •-------------------------------------------------------
+--------------------------------------------------------------•                                                             •------------------------------------------------------
+------------------------------------------------------------•                                                                •-----------------------------------------------------
+-----------------------------------------------------------•                                                                 •-----------------------------------------------------
+-----------------------------------------------------------•                                                                 •-----------------------------------------------------
+-----------------------------------------------------------•                                                                 •-----------------------------------------------------
+-----------------------------------------------------------•                                                                 •----------------------------------------------------- 
+---------------------------------------------------------•           •                                                       •-----------------------------------------------------
+-------------------------------------------------------•                                                                     •-----------------------------------------------------
+----------------------------------------------------•                                                                         •----------------------------------------------------
+--------------------------------------------------•                                                                            •---------------------------------------------------
+-----------------------------------------------•                                                                                •--------------------------------------------------
+---------------------------------------------•                                                                                   •------------------------------------------------- 
+-------------------------------------------•                                                                                      •------------------------------------------------
+------------------------------------------•                                                                                       •------------------------------------------------
+------------------------------------------•                                                                                       •------------------------------------------------
+-----------------------------------------------•                                                                                   •-----------------------------------------------
+----------------------------------------------•                                                                                     •----------------------------------------------
+-----------------------------------------------•                                                                                    •----------------------------------------------
+---------------------------------------------•                                                                                      •----------------------------------------------
+----------------------------------------------•                                                                                      •---------------------------------------------
+-----------------------------------------------•                                                                                     •---------------------------------------------
+------------------------------------------------•                                                                                     •--------------------------------------------
+------------------------------------------------•                                                                                      •-------------------------------------------
+------------------------------------------------•                                                                                       •------------------------------------------
+--------------------------------------------------•                                                                                       •----------------------------------------
+---------------------------------------------------------•                                                                                   •-------------------------------------
+-----------------------------------------------------------------•                                                                             •-----------------------------------
+------------------------------------------------------------------•                                                                             •----------------------------------
+----------------------------------------------------------------------•                                                                          •---------------------------------
+-------------------------------------------------------------------------•                                                                        •--------------------------------
+--------------------------------------------------------------------------•                                                                        •-------------------------------
+--------------------------------------------------------------------------•                                                                         •------------------------------
+--------------------------------------------------------------------------•                                                                          •-----------------------------
+
+
+/*-- • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • PÁGINAS DE ARTISTA • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • */
+
+
+/*----------------------------------------------------------------------------------------------{ ••• SOOPA GUANGA */
+
+.contenedor-soopa {
+
+    display: flex;
+    flex-direction: column;
+
+    
+}
+
+/*----------------------------------------------------------------------------------------------{ ••• CABEZERA */
+
+.contenedor-cabezera {
+
+  position: fixed;
+
+    background-color: transparent;
+
+}
+
+.cabezera-soopa {
+
+    background-color: #f53a5d;
+
+
+    padding: 0;
+    height: 8vh;
+
+   
+}
+
+.cabeza-lobo {
+    background-color: transparent;
+}
+
+.inicio {
+    background-color: transparent;
+}
+
+#lobo {
+
+  z-index: 400;
+
+    position: fixed;
+    background-color: transparent;
+    height: 4vh;
+    top: 0;
+    left: 0;
+    margin: 2vh;
+}
+
+.cabezera-soopa .menu-wrap {
+
+    top: 0;
+    right: 0;
+    margin-right: 6vh;
+
+    background-color: transparent;
+
+    position: fixed;
+    z-index: 4;
+  }
+  
+.cabezera-soopa .menu-wrap .toggler {
+
+    background-color: transparent;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+  }
+  
+.cabezera-soopa .menu-wrap .hamburger {
+
+    background-color: transparent;
+
+    position: absolute;
+    top: 1vh;
+    left: 0;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    padding: 1rem;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+/* HAMBURGUESA */
+.cabezera-soopa .menu-wrap .hamburger > div {
+
+    background-color: transparent;
+
+    position: relative;
+    flex: none;
+    width: 100%;
+    height: 2px;
+    background: var(--color1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+  }
+
+  .sangrecilla {
+    background-color: transparent;
+    width: fit-content;
+  }
+
+  #sangron {
+    background-color: transparent;
+    width: fit-content;
+  }
+
+  /* { ••• TERMINA: CABEZERA ----------------------*/
+
+  /*----------------------------------------------------------------------------------------------{ ••• ABOUT */
+
+  .cuerpo {
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    margin-top: 20vh;
+
+  }
+
+  .foto-soopa {
+
+    background-color: transparent;
+
+    height: 10vh;
+    margin-top: 4vh;
+
+    position: inherit;
+
+  }
+
+  #soopa {
+
+      background-color: transparent;
+      height: 30vh;
+  }
+
+  .nombre-s {
+      background-color: transparent;
+      font-family: luchita;
+      font-size: 9vh;
+
+      margin-top: 25vh;
+  }
+
+  .texto-s {
+    background-color: transparent;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2vh;
+    margin-top: 2vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    text-align: left;
+  }
+
+/* { ••• TERMINA: ABOUT ----------------------*/
+
+/*----------------------------------------------------------------------------------------------{ ••• CARTEL */
+
+.cartel {
+  background-color: #f53a5d;
+  margin-top: 5vh;
+  width: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titulo-cartel {
+  background-color: transparent;
+  font-family: luchita;
+  font-size: 6vh;
+  color: var(--color1);
+
+  margin-top: 8vh;
+}
+
+.contenido-cartel {
+  background-color: transparent;
+  margin-top: 3vh;
+  width: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cartel1 {
+  background-color: transparent;
+  margin: 2vh;
+}
+
+#espectro {
+  background-color: transparent;
+  margin: 1vh;
+  width: 50vh;
+}
+
+.cartel2 {
+  background-color: transparent;
+  margin: 2vh;
+}
+
+#placero {
+  background-color: transparent;
+  margin: 1vh;
+  width: 50vh;
+}
+
+.cartel3 {
+  background-color: transparent;
+  margin: 2vh;
+  margin-bottom: 9vh;
+}
+
+#badgirl {
+  background-color: transparent;
+  margin: 1vh;
+  width: 50vh;
+}
+
+/* { ••• TERMINA: CARTEL ----------------------*/
+
+/*----------------------------------------------------------------------------------------------{ ••• FOTO */
+
+.foto {
+  background-color: #fff;
+  margin-top: 5vh;
+  width: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titulo-foto {
+  background-color: transparent;
+  font-family: frank;
+  font-size: 35vh;
+  color: #f53a5d;
+
+  margin-top: 2vh;
+}
+
+.contenido-foto {
+  background-color: transparent;
+  margin-top: 3vh;
+  width: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.foto1 {
+  background-color: transparent;
+  margin: 2vh;
+}
+
+#spag1 {
+  background-color: transparent;
+  margin: 1vh;
+  width: 50vh;
+}
+
+.foto2 {
+  background-color: transparent;
+  margin: 2vh;
+  margin-top: 0;
+}
+
+#spag2 {
+  background-color: transparent;
+  margin: 1vh;
+  margin-top: 0;
+  width: 50vh;
+}
+
+.foto3 {
+  background-color: transparent;
+  margin: 2vh;
+  margin-bottom: 9vh;
+}
+
+#pose {
+  background-color: transparent;
+  margin: 1vh;
+  width: 50vh;
+}
+
+/* { ••• TERMINA: FOTO ----------------------*/
+
+/*----------------------------------------------------------------------------------------------{ ••• MURAL */
+
+  .mural {
+    background-color: rgb(0, 0, 0);
+    margin-top: 5vh;
+    width: fit-content;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contenedor-sangre-blanca {
+    background-color: transparent;
+    width: fit-content;
+  }
+
+  #sangre-blanca {
+    background-color: transparent;
+    width: fit-content;
+  }
+
+  .titulo-mural {
+    background-color: transparent;
+    font-family: frank;
+    font-size: 60vh;
+    color: var(--color1);
+
+    transform: rotate(90deg);
+  
+    margin: 45vh;
+  }
+  
+  .contenido-mural {
+    background-color: transparent;
+    margin-top: 3vh;
+    width: fit-content;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .mural1 {
+    background-color: transparent;
+    margin: 2vh;
+  }
+  
+  #xolo1 {
+    background-color: transparent;
+    margin: 1vh;
+    width: 50vh;
+  }
+  
+  .mural2 {
+    background-color: transparent;
+    margin: 2vh;
+  }
+  
+  #xolo2 {
+    background-color: transparent;
+    margin: 1vh;
+    width: 50vh;
+  }
+  
+  .mural3 {
+    background-color: transparent;
+    margin: 2vh;
+  }
+  
+  #xolo3 {
+    background-color: transparent;
+    margin: 1vh;
+    width: 50vh;
+  }
+
+  .mural4 {
+    background-color: transparent;
+    margin: 2vh;
+  }
+  
+  #xolo4 {
+    background-color: transparent;
+    margin: 1vh;
+    width: 50vh;
+  }
+
+  .mural5 {
+    background-color: transparent;
+    margin: 2vh;
+    margin-bottom: 9vh;
+  }
+  
+  #xolo5 {
+    background-color: transparent;
+    margin: 1vh;
+    width: 50vh;
+  }
+
+  /* { ••• TERMINA: MURAL ----------------------*/
+
+/*----------------------------------------------------------------------------------------------{ ••• DISEÑO DE IMAGEN */
+
+.diseño-de-imagen {
+  background-color: #fff;
+  margin-top: 5vh;
+  width: fit-content;
+  height: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titulo-di {
+  background-color: transparent;
+  font-family: frank;
+  font-size: 6vh;
+  color: #f53a5d;
+
+  margin-top: 3vh;
+}
+
+.contenido-di {
+  background-color: transparent;
+  margin-top: 3vh;
+  width: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imagen1 {
+  background-color: transparent;
+  margin: 2vh;
+}
+
+#di1 {
+  background-color: transparent;
+  margin: 1vh;
+  width: 50vh;
+}
+
+.imagen2 {
+  background-color: transparent;
+  margin: 2vh;
+  margin-top: 0;
+}
+
+#di2 {
+  background-color: transparent;
+  margin: 1vh;
+  margin-top: 0;
+  width: 50vh;
+}
+
+.imagen3 {
+  background-color: transparent;
+  margin: 2vh;
+}
+
+#di3 {
+  background-color: transparent;
+  margin: 1vh;
+  width: 50vh;
+}
+
+
+
+#rashitos-rosas-id {
+  background-color: transparent;
+  margin-bottom: 0;
+}
+
+/* { ••• TERMINA: DISEÑO DE IMAGEN ----------------------*/
+
+/*----------------------------------------------------------------------------------------------{ ••• PIE */
+
+.contenedor-pie {
+
+  background-color: #f53a5d;
+  width: 100%;
+  height: 10vh;
+  
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+
+}
+
+.contenedor-mail-soopa {
+  background-color: transparent;
+  width: auto;
+  margin-top: 3vh;
+}
+
+#mail-soopa {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 3vh;
+  background-color: transparent;
+  color: var(--color1);
+}
+
+.contenedor-slash-soopa {
+  background-color: transparent;
+  width: auto;
+  margin-top: 3vh;
+}
+
+#slash-soopa {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 3vh;
+  margin-left: 1vh;
+  background-color: transparent;
+  color: var(--color1);
+}
+
+
+.contenedor-ig-soopa {
+  background-color: transparent;
+  width: 3vh;
+  margin-left: 1vh;
+  margin-top: .5vh;
+  margin-top: 3vh;
+
+}
+
+#ig-soopa {
+  background-color: transparent;
+  color: var(--color1);
+}
