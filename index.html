@@ -7,20 +7,25 @@
 <!---------------------------------- EMPIEZA HEAD -->
 
 <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="css/estilos.css">
     <style>
         #flashlight {
+
+            background-color: transparent;
     
             width: 100px;
             height: 100px;
             position: absolute;
             top: 100px;
             left: 50%;
-            background-image: url(imgs/flashlight.svg);
+            background-image: url(flashlight.svg);
+            background-color: transparent;
             z-index: 1;
             box-shadow: 0 0 0 200vw rgb(0, 0, 0);
             background-position: center;
             background-size: cover;
+            border-radius: 100%;
     
         }
     
@@ -78,7 +83,6 @@
 <!---------------------------------- EMPIEZA BODY -->
 
 <body>
-    <div id="flashlight"></div>
     <div class="container-1">
         <div class="box-1">
             <a href="inicio.html"><img id="logo" src="imgs/logo.svg" alt="logo"></a>
@@ -87,7 +91,10 @@
     </div>
 </body>
 
-<script src="js/flashlightmouse.js"></script>
+<div id="flashlight"></div>
+<script src="js/flashlightmouse.js"> if ("ontouchstart" in document.documentElement) {
+    window.location.href = "inicio.html"
+} </script>
 
 <!-----------------------••••••••••• TERMINA BODY -->
 

@@ -15,4 +15,3 @@ document.body.addEventListener("mousemove", function (e) {
 document.body.addEventListener("click", function (e) {
   window.location.href = "inicio.html"
 })
-

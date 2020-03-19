@@ -5,6 +5,8 @@
     margin: 0;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
     box-sizing: border-box;
     background-color: var(--color1);
 }
@@ -54,19 +56,34 @@
 
 /*------------------------------------------------------------------------------------------------------------ FUENTES ••••••••••••••••••••••••*/
 
-@font-face {
-    font-family: luchita;
-    src: url(fuentes/luchita.ttf)
+  @font-face {
+      font-family: luchita;
+      src: url(fuentes/luchita.ttf)
+    }
+
+  @font-face {
+      font-family: mars;
+      src: url(fuentes/MarsAttacks.ttf);
+    }
+
+  @font-face {
+      font-family: frank;
+      src: url(fuentes/youngfrank.ttf);
+    }
+
+  @font-face {
+      font-family: futuram;
+      src: url(fuentes/FuturaStd-Medium.otf);
   }
 
-@font-face {
-    font-family: mars;
-    src: url(fuentes/MarsAttacks.ttf);
+  @font-face {
+    font-family: futurab;
+    src: url(fuentes/FuturaStd-Book.otf.otf);
   }
 
-@font-face {
-    font-family: frank;
-    src: url(fuentes/youngfrank.ttf);
+  @font-face {
+    font-family: futuraB;
+    src: url(fuentes/FuturaStd-Bold.otf);
   }
 
 /*-------------------------------------------------------------------------------------------------------------- INDEX ••••••••••••••••••••••••*/
@@ -311,6 +328,7 @@ ul li section div a#carrito{
 
     background-color: transparent;
     height: 4vh;
+    margin-bottom: -1vh;
 
 }
 
@@ -378,8 +396,8 @@ nav.contactodiv a {
     background-color: transparent;
     color: var(--color1);
 
-    font-family: luchita;
-    font-size: 4vh;
+    font-family: futuram;
+    font-size: 2.5vh;
     text-decoration: none;
 
     margin-top: 2vh;
@@ -425,7 +443,10 @@ nav.contactodiv a:hover {
 /*----------------------------------------------------------------------------------------------{ ••• DEMOLER / VISTA PRINCIPAL */
 
 
-.container-3 {
+
+/* cellphones */
+@media only screen and (min-width: 321px) and (max-width: 750px){
+  .container-3 {
 
     position: relative;
     width: 100%;
@@ -440,26 +461,9 @@ nav.contactodiv a:hover {
     overflow: hidden;
 
     
-}
+  }
 
-/*.demolerdiv {
-
-    display: flex;
-    flex-wrap: wrap;
-
-    background-color: transparent;
-    opacity: 60%;
-
-    margin: 10vh;
-    height: 100vh;
-    justify-content: center;
-
-    overflow: hidden;
-
-}*/
-
-
-.demolerdiv {
+  .demolerdiv {
 
     top: 0;
     left: 0;
@@ -481,8 +485,7 @@ nav.contactodiv a:hover {
     z-index: 1;
 
 }
-
-.video-container {
+  .video-container {
 
     position: absolute;
     top: 0;
@@ -491,52 +494,178 @@ nav.contactodiv a:hover {
     height: 100%;
 
     display: flex;
-    align-items: center;
-    
-}
+    align-items: center; 
+  }
 
-#celula {
+  #celula {
     position: relative;
     left: -100px;
     height: inherit;
+  }
+
+  .sangre {
+    background-color: transparent;
+    z-index: 3;
+  }
+
+  #sangrita {
+    background-color: transparent;
+    margin-bottom: -2vh;
+  }
 }
 
-.color-overlay {
+
+/* Medium desktop */
+@media only screen and (min-width: 751px){
+  .container-3 {
+
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+
+    overflow: hidden;
+
+    
+}
+
+  .demolerdiv {
+
+    top: 0;
+    left: 0;
+
+    position: relative;
+    transform: rotate(90deg);
+
+    margin: auto;
+    background-color: transparent;
+    z-index: 2;
+}
+
+  #demoler {
+
+    margin-bottom: 0;
+
+    height: 100vh;
+    background-color: transparent;
+    
+    z-index: 1;
+
+  }
+
+  .video-container {
+
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #fff;
     width: 100%;
-    height: 800%;
-} /* ------ No junciona :/ */
+    height: 100%;
+    top: -20vh;
 
-.sangre {
+  }
+
+  #celula {
+    position: relative;
+    height: 155vh;
+    left: -4vh;
+  }
+
+  .sangre {
     background-color: transparent;
     z-index: 3;
-}
+  }
 
-#sangrita {
+  #sangrita {
     background-color: transparent;
     margin-bottom: -2vh;
+    margin-top: -10vh;
+  }
 }
 
-  /*  @media (max-width: 750px) {
-        #celula {
-            width: 100%;
-        }
-        body {
-            background: url('poster.jpg');
-            background-size: cover;
-        }
-    }
+/* x large desktop */
+@media only screen and (min-width: 1920px){
+  .container-3 {
 
-    */
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+
+    overflow: hidden;
+
+    
+}
+
+  .demolerdiv {
+
+    top: 0;
+    left: 0;
+
+    position: relative;
+    transform: rotate(90deg);
+
+    margin: auto;
+    background-color: transparent;
+    z-index: 2;
+}
+
+  #demoler {
+
+    margin-bottom: 0;
+
+    height: 100vh;
+    background-color: transparent;
+    
+    z-index: 1;
+
+  }
+
+  .video-container {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    top: -20vh;
+
+  }
+
+  #celula {
+    position: relative;
+    height: 155vh;
+    left: -4vh;
+  }
+
+  .sangre {
+    background-color: transparent;
+    z-index: 2;
+  }
+
+  #sangrita {
+    background-color: transparent;
+    margin-bottom: -2vh;
+    margin-top: -10vh;
+  }
+}
 
 /*----------------------------------------------------------------------------------------------{ ••• ABOUT */
 
 
 /* CONTENEDOR */
 
+/* cellphones */
+@media only screen and (min-width: 321px) and (max-width: 750px){
 .container-2 {
 
     display: flex;
@@ -551,39 +680,168 @@ nav.contactodiv a:hover {
     align-items: center;
     flex-direction: column;
 
+  }
+
+  /* TEXTO */
+
+    .textodiv {
+        
+      background-color: transparent;
+    }
+
+    #texto {
+
+      font-family: futuram;
+      font-size: 2.5vh;
+      text-align: left;
+      color: var(--color1);
+      background-color: transparent;
+
+      margin: 6vh;
+
+    }
+
+    /* IMÁGEN */
+
+    .mariosdiv {
+
+      height: 25vh;
+      width: 80%;
+      background-color: transparent;
+    }
+
+    #marios {
+
+      background-color: transparent;
+      width: 100%;
+
+    }
 }
 
-/* TEXTO */
+/* Medium desktop */
+@media only screen and (min-width: 751px){
+  .container-2 {
 
-.textodiv {
-    
-    background-color: transparent;
+    display: flex;
+    flex-wrap: wrap;
+
+    padding: 0vh;
+    margin: 0vh;
+    height: 85vh;
+
+    background-color: #f00;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+  }
+
+  /* TEXTO */
+
+    .textodiv {
+        
+      background-color: transparent;
+    }
+
+    #texto {
+
+      font-family: futuram;
+      font-size: 2.5vh;
+      text-align: left;
+      color: var(--color1);
+      background-color: #000;
+      padding: 4vh;
+
+      margin: 6vh;
+      margin-top: 30vh;
+      width: 80vh;
+
+    }
+
+    /* IMÁGEN */
+
+    .mariosdiv {
+
+      height: 25vh;
+      width: 100vh;
+      margin-top: -60vh;
+      margin-left: -40vh;
+      background-color: transparent;
+      transform: rotate(20deg);
+
+      z-index: 4;
+    }
+
+    #marios {
+
+      background-color: transparent;
+      width: 100%;
+
+    }
 }
 
-#texto {
+  /* x large desktop */
+@media only screen and (min-width: 1920px){
+  .container-2 {
 
-    text-align: left;
-    color: var(--color1);
-    background-color: transparent;
+    display: flex;
+    flex-wrap: wrap;
 
-    margin: 6vh;
+    padding: 0vh;
+    margin: 0vh;
+    height: 100vh;
 
-}
+    background-color: #f00;
 
-/* IMÁGEN */
+    justify-content: space-evenly;
+    flex-direction: row;
 
-.mariosdiv {
+  }
 
-    height: 25vh;
-    width: 80%;
-    background-color: transparent;
-}
+    /* TEXTO */
 
-#marios {
+    .textodiv {
+        
+      background-color: transparent;
+    }
 
-    background-color: transparent;
-    width: 100%;
+    #texto {
 
+      font-family: futuram;
+      font-size: 2.5vh;
+      text-align: left;
+      color: var(--color1);
+      background-color: #000;
+      padding: 4vh;
+
+      margin: 6vh;
+      margin-top: 40vh;
+      width: 80vh;
+
+    }
+
+    /* IMÁGEN */
+
+    .mariosdiv {
+
+      height: 15vh;
+      width: 120vh;
+      margin-top: -60vh;
+      margin-bottom: 20vh;
+      margin-left: -40vh;
+      background-color: transparent;
+      transform: rotate(20deg);
+
+      z-index: 5;
+    }
+
+    #marios {
+
+      background-color: transparent;
+      width: 100%;
+
+    }
 }
 
 /* { ••• TERMINA: DEMOLER / VISTA PRINCIPAL y ABOUT ----------------------*/
@@ -732,7 +990,8 @@ nav.contactodiv a:hover {
   }
   
 /* HAMBURGUESA */
-.cabezera-soopa .menu-wrap .hamburger > div {
+
+  .cabezera-soopa .menu-wrap .hamburger > div {
 
     background-color: transparent;
 
@@ -761,6 +1020,8 @@ nav.contactodiv a:hover {
 
   /*----------------------------------------------------------------------------------------------{ ••• ABOUT */
 
+/* cellphones */
+@media only screen and (min-width: 321px) and (max-width: 750px){
   .cuerpo {
 
     display: flex;
@@ -800,13 +1061,121 @@ nav.contactodiv a:hover {
 
   .texto-s {
     background-color: transparent;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: futuram;
     font-size: 2vh;
     margin-top: 2vh;
     margin-left: 5vh;
     margin-right: 5vh;
     text-align: left;
   }
+}
+
+  /* Medium desktop */
+@media only screen and (min-width: 751px){
+  .cuerpo {
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    margin-top: 20vh;
+
+  }
+
+  .foto-soopa {
+
+    background-color: transparent;
+
+    height: 10vh;
+    margin-top: 15vh;
+
+    position: inherit;
+
+  }
+
+  #soopa {
+
+      background-color: transparent;
+      height: 30vh;
+  }
+
+  .nombre-s {
+      background-color: transparent;
+      font-family: luchita;
+      font-size: 9vh;
+
+      margin-top: 25vh;
+  }
+
+  .texto-s {
+    background-color: transparent;
+    font-family: futuram;
+    font-size: 2vh;
+    
+    width: 80vh;
+
+    margin-top: 2vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    text-align: left;
+  }
+}
+
+  /* x large desktop */
+@media only screen and (min-width: 1920px){
+  .cuerpo {
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    margin-top: 20vh;
+
+  }
+
+  .foto-soopa {
+
+    background-color: transparent;
+
+    height: 10vh;
+    margin-top: 15vh;
+
+    position: inherit;
+
+  }
+
+  #soopa {
+
+      background-color: transparent;
+      height: 30vh;
+  }
+
+  .nombre-s {
+      background-color: transparent;
+      font-family: luchita;
+      font-size: 9vh;
+
+      margin-top: 25vh;
+  }
+
+  .texto-s {
+    background-color: transparent;
+    font-family: futuram;
+    font-size: 2vh;
+    
+    width: 80vh;
+
+    margin-top: 2vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    text-align: left;
+  }
+}
+
 
 /* { ••• TERMINA: ABOUT ----------------------*/
 
@@ -1118,7 +1487,7 @@ nav.contactodiv a:hover {
 
 #rashitos-rosas-id {
   background-color: transparent;
-  margin-bottom: 0;
+  margin-bottom: -1vh;
 }
 
 /* { ••• TERMINA: DISEÑO DE IMAGEN ----------------------*/
@@ -1146,8 +1515,8 @@ nav.contactodiv a:hover {
 }
 
 #mail-soopa {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 3vh;
+  font-family: futuram;
+  font-size: 2.2vh;
   background-color: transparent;
   color: var(--color1);
 }
@@ -1159,8 +1528,8 @@ nav.contactodiv a:hover {
 }
 
 #slash-soopa {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 3vh;
+  font-family: futuram;
+  font-size: 2.2vh;
   margin-left: 1vh;
   background-color: transparent;
   color: var(--color1);
@@ -1180,3 +1549,1912 @@ nav.contactodiv a:hover {
   background-color: transparent;
   color: var(--color1);
 }
+
+/* { ••• TERMINA: TERMINA PIE ----------------------*/
+
+/* { ••• TERMINA: SOOPA GUANGA --------------------------------------------------------------------------------------*/
+
+/*
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------                           ------------------------------------------------------------
+-------------------------------------------------                                       ------------------------------------------------------
+---------------------------------------------                       --                      --------------------------------------------------
+-----------------------------------------                        --------                       ----------------------------------------------
+-------------------------------------                          ------------                        -------------------------------------------
+------------------------------------                          --------------                        ------------------------------------------
+-------------------------------------                          ------------                       --------------------------------------------
+-----------------------------------------                        --------                       ----------------------------------------------
+---------------------------------------------                       --                      --------------------------------------------------
+-------------------------------------------------                                       ------------------------------------------------------
+-------------------------------------------------------                           ------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------         --------  --         ------------
+----------------------------------------------------------------------------------------------------  -----  --------  --  -----  ------------
+----------------------------------------------------------------------------------------------------  -----  --------  --  -----  ------------
+----------------------------------------------------------------------------------------------------         --        --         ------------
+----------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+-------------*/
+
+
+
+/*----------------------------------------------------------------------------------------------{ ••• JERO TOLEDO */
+
+  .contenedor-jero {
+
+    display: flex;
+    flex-direction: column;
+
+    
+}
+
+/*----------------------------------------------------------------------------------------------{ ••• CABEZERA */
+
+.contenedor-cabezera-jero {
+
+  position: fixed;
+
+    background-color: transparent;
+
+}
+
+.cabezera-jero {
+
+    background-color: #000000;
+
+
+    padding: 0;
+    height: 8vh;
+
+   
+}
+
+.cabeza-lobo-jero {
+    background-color: transparent;
+}
+
+.inicio-jero {
+    background-color: transparent;
+}
+
+#lobo-jero {
+
+  z-index: 400;
+
+    position: fixed;
+    background-color: transparent;
+    height: 4vh;
+    top: 0;
+    left: 0;
+    margin: 2vh;
+}
+
+.cabezera-jero .menu-wrap {
+
+    top: 0;
+    right: 0;
+    margin-right: 6vh;
+
+    background-color: transparent;
+
+    position: fixed;
+    z-index: 4;
+  }
+  
+.cabezera-jero .menu-wrap .toggler {
+
+    background-color: transparent;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+  }
+  
+.cabezera-jero .menu-wrap .hamburger {
+
+    background-color: transparent;
+
+    position: absolute;
+    top: 1vh;
+    left: 0;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    padding: 1rem;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+/* HAMBURGUESA */
+.cabezera-jero .menu-wrap .hamburger > div {
+
+    background-color: transparent;
+
+    position: relative;
+    flex: none;
+    width: 100%;
+    height: 2px;
+    background: var(--color1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+  }
+
+  .sangrecilla {
+    background-color: transparent;
+    width: fit-content;
+  }
+
+  #sangron {
+    background-color: transparent;
+    width: fit-content;
+  }
+
+  /* { ••• TERMINA: CABEZERA ----------------------*/
+
+  /*----------------------------------------------------------------------------------------------{ ••• ABOUT */
+
+/* cellphones */
+@media only screen and (min-width: 321px) and (max-width: 750px){
+  .cuerpo {
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    margin-top: 20vh;
+
+  }
+
+  #jero {
+      background-color: transparent;
+      height: 20vh;
+  }
+
+  .nombre-j {
+      background-color: transparent;
+      font-family: luchita;
+      font-size: 9vh;
+      margin-top: 6vh;
+  }
+
+  .texto-j {
+    background-color: transparent;
+    font-family: futuram;
+    font-size: 2vh;
+    margin-top: 2vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    text-align: left;
+  }
+
+  #rashitosarriba-jero {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    margin-top: 2vh;
+    margin-bottom: -1vh;
+  }
+}
+
+  /* Medium desktop */
+@media only screen and (min-width: 751px){
+  .cuerpo {
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    margin-top: 20vh;
+
+  }
+
+  #jero {
+    background-color: transparent;
+    height: 20vh;
+    margin-top: 15vh;
+}
+
+.nombre-j {
+    background-color: transparent;
+    font-family: luchita;
+    font-size: 9vh;
+    margin-top: 6vh;
+}
+
+.texto-j {
+  background-color: transparent;
+  font-family: futuram;
+  font-size: 2vh;
+  margin-top: 2vh;
+  margin-bottom: 4vh;
+  margin-left: 5vh;
+  margin-right: 5vh;
+  text-align: left;
+  width: 80vh;
+}
+
+  #rashitosarriba-jero {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    margin-top: 2vh;
+    margin-bottom: -1vh;
+  }
+}
+
+  /* x large desktop */
+@media only screen and (min-width: 1920px){
+  .cuerpo {
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    margin-top: 20vh;
+
+  }
+
+  #jero {
+      background-color: transparent;
+      height: 20vh;
+      margin-top: 15vh;
+  }
+
+  .nombre-j {
+      background-color: transparent;
+      font-family: luchita;
+      font-size: 9vh;
+      margin-top: 6vh;
+  }
+
+  .texto-j {
+    background-color: transparent;
+    font-family: futuram;
+    font-size: 2vh;
+    margin-top: 2vh;
+    margin-bottom: 4vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    text-align: left;
+    width: 80vh;
+  }
+
+  #rashitosarriba-jero {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    margin-top: 2vh;
+    margin-bottom: -1vh;
+  }
+}
+
+/* { ••• TERMINA: ABOUT ----------------------*/
+
+/*----------------------------------------------------------------------------------------------{ ••• OBRA */
+
+  .negro1-jero {
+    background-color: #000;
+    margin-top: 0;
+    width: fit-content;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+  
+  .mm1-contenedor {
+    background-color: transparent;
+    margin: 2vh;
+  }
+
+  #mm1 {
+    background-color: transparent;
+    margin: 1vh;
+    width: 50vh;
+  }
+
+  .blanco1-jero {
+    background-color: rgb(255, 255, 255);
+    margin-top: 0;
+    width: fit-content;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+  .mm2-contenedor {
+    background-color: transparent;
+    margin: 2vh;
+    margin-top: 8vh;
+  }
+
+  #mm2 {
+    background-color: transparent;
+    margin: 1vh;
+    width: 50vh;
+  }
+
+  .mm3-contenedor {
+    background-color: transparent;
+    margin: 2vh;
+  }
+
+  #mm3 {
+    background-color: transparent;
+    margin: 1vh;
+    width: 50vh;
+  }
+
+  .negro2-jero {
+    background-color: #000;
+    margin-top: 1vh;
+    width: fit-content;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+  .sangreabajo-jero-contenedor {
+    background-color: transparent;
+    width: 100%;
+    height: 10vh;
+    margin-top: -1vh;
+  }  
+  
+  #sangreabajo-jero {
+    background-color: transparent;
+    width: 100%;
+  }
+
+  .rana-contenedor {
+    background-color: transparent;
+    margin: 2vh;
+    margin-top: 8vh;
+  }
+
+  #rana {
+    background-color: transparent;
+    width: 50vh;
+  }
+  .parrot-contenedor {
+    background-color: transparent;
+    margin: 2vh;
+    margin-top: 8vh;
+  }
+
+  #parrot {
+    background-color: transparent;
+    width: 50vh;
+  }
+
+
+/* cellphones */
+@media only screen and (min-width: 321px) and (max-width: 750px){
+  .sangrearriba-jero-contenedor {
+    background-color: transparent;
+    width: 100%;
+    height: 10vh;
+    margin-bottom: -1vh;
+  }  
+  #sangrearriba-jero {
+    background-color: transparent;
+    width: 100%;
+  }
+}
+
+  /* Medium desktop */
+@media only screen and (min-width: 751px){
+  .sangrearriba-jero-contenedor {
+    background-color: transparent;
+    width: 100%;
+    height: 10vh;
+    margin-bottom: 7vh;
+  }  
+  #sangrearriba-jero {
+    background-color: transparent;
+    width: 100%;
+  }
+
+}
+
+  /* x large desktop */
+@media only screen and (min-width: 1920px){
+  .sangrearriba-jero-contenedor {
+    background-color: transparent;
+    width: 100%;
+    height: 10vh;
+    margin-bottom: 7vh;
+  }  
+  #sangrearriba-jero {
+    background-color: transparent;
+    width: 100%;
+  }
+}
+
+    .blanco2-jero {
+      background-color: rgb(255, 255, 255);
+      margin-top: 0;
+      width: fit-content;
+      height: fit-content;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .piedras-contenedor {
+      background-color: transparent;
+      margin: 2vh;
+      margin-top: 8vh;
+    }
+  
+    #piedras {
+      background-color: transparent;
+      width: 50vh;
+    }
+
+    .DB-contenedor {
+      background-color: transparent;
+      margin: 2vh;
+    }
+  
+    #DB {
+      background-color: transparent;
+      width: 50vh;
+    }
+
+    .punto-contenedor {
+      background-color: transparent;
+      margin: 2vh;
+    }
+  
+    #punto {
+      background-color: transparent;
+      width: 50vh;
+    }
+
+    .almohadon-contenedor {
+      background-color: transparent;
+      margin: 2vh;
+      margin-top: 4vh;
+      transform: rotate(356deg);
+    }
+  
+    #almohadon {
+      background-color: transparent;
+      width: 50vh;
+    }
+
+    .ojos-contenedor {
+      background-color: transparent;
+      margin: 2vh;
+    }
+  
+    #ojos {
+      background-color: transparent;
+      width: 50vh;
+    }
+
+    .rashitosarriba2-jero-contenedor {
+      background-color: transparent;
+      width: 100%;
+      margin-bottom: -1vh;
+    }
+
+/* { ••• TERMINA: OBRA ----------------------*/
+
+/*----------------------------------------------------------------------------------------------{ ••• PIE */ 
+
+  .contenedor-pie-jero {
+
+    background-color: #000000;
+    width: 100%;
+    height: 10vh;
+    
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+  
+  }
+  
+  .contenedor-pagina-jero {
+    background-color: transparent;
+    width: auto;
+    margin-top: 0vh;
+  }
+  
+  #pagina-jero {
+    font-family: futuram;
+    font-size: 2.2vh;
+    background-color: transparent;
+    color: var(--color1);
+  }
+  
+  .contenedor-slash-jero {
+    background-color: transparent;
+    width: auto;
+    margin-top: 0vh;
+  }
+  
+  #slash-jero {
+    font-family: futuram;
+    font-size: 2.2vh;
+    margin-left: 1vh;
+    background-color: transparent;
+    color: var(--color1);
+  }
+  
+  
+  .contenedor-ig-jero {
+    background-color: transparent;
+    width: 2vh;
+    margin-left: 1vh;
+    margin-top: .1vh;
+  
+  }
+  
+  #ig-jero {
+    background-color: transparent;
+    color: var(--color1);
+  }
+  
+  /* { ••• TERMINA: TERMINA PIE ----------------------*/
+
+
+/*
+
+       ----------------------------------------------------------------------------------------
+   ---------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------   ------------------------------------------->     •
+------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------                        
+----------------------------------------------------------                     
+-----------------------------------------------------------                          
+------------------------------------------------------------                         
+-----------------------------------------------------------                           
+----------------------------------------------------------                              
+-------------------------------------------------------                          
+---------------------------------------------------------                           
+----------------------------------------------------------                        
+----------------------------------------------------------                          
+----------------------------------------------------------                      
+---------------------------------------------------------                           
+----------------------------------------------------------                   
+----------------------------------------------------------                         
+----------------------------------------------------------                                
+--------------------------------------------------------                                
+------------------------------------------------------                                
+-------------------------------------------------------                             
+-------------------------------------------------------                               
+------------------------------------------------------                             
+----------------------------------------------------  
+
+INTENTO DE MANO SEÑALANDO UN PEQUEÑO VIRUS O BACTERIA, SIN SABER REALMENTE LA DIFERENCIA...
+
+*/
+
+/*----------------------------------------------------------------------------------------------{ ••• MARIO CRUZ */
+
+  .contenedor-mario {
+
+    display: flex;
+    flex-direction: column;
+
+    
+}
+
+/*----------------------------------------------------------------------------------------------{ ••• CABEZERA */
+
+.contenedor-cabezera-mario {
+
+  position: fixed;
+
+    background-color: transparent;
+
+}
+
+.cabezera-mario {
+
+    background-color: #000000;
+
+
+    padding: 0;
+    height: 8vh;
+
+   
+}
+
+.cabeza-lobo-mario {
+    background-color: transparent;
+}
+
+.inicio-mario {
+    background-color: transparent;
+}
+
+#lobo-mario {
+
+  z-index: 400;
+
+    position: fixed;
+    background-color: transparent;
+    height: 4vh;
+    top: 0;
+    left: 0;
+    margin: 2vh;
+}
+
+.cabezera-mario .menu-wrap {
+
+    top: 0;
+    right: 0;
+    margin-right: 6vh;
+
+    background-color: transparent;
+
+    position: fixed;
+    z-index: 4;
+  }
+  
+.cabezera-mario .menu-wrap .toggler {
+
+    background-color: transparent;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+  }
+  
+.cabezera-mario .menu-wrap .hamburger {
+
+    background-color: transparent;
+
+    position: absolute;
+    top: 1vh;
+    left: 0;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    padding: 1rem;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+/* HAMBURGUESA */
+.cabezera-mario .menu-wrap .hamburger > div {
+
+    background-color: transparent;
+
+    position: relative;
+    flex: none;
+    width: 100%;
+    height: 2px;
+    background: var(--color1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+  }
+
+  .sangrecilla {
+    background-color: transparent;
+    width: fit-content;
+  }
+
+  #sangron {
+    background-color: transparent;
+    width: fit-content;
+  }
+
+  /* { ••• TERMINA: CABEZERA ----------------------*/
+
+  /*----------------------------------------------------------------------------------------------{ ••• ABOUT */
+
+/* cellphones */
+@media only screen and (min-width: 321px) and (max-width: 750px){
+  .cuerpo {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+  
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    margin-top: 20vh;
+    }
+    #mario {
+  
+        background-color: transparent;
+        height: 30vh;
+        margin-top: 15vh;
+    }
+    .nombre-m {
+        background-color: transparent;
+        font-family: luchita;
+        font-size: 9vh;
+  
+        margin-top: 4vh;
+    }
+    .texto-m {
+      background-color: transparent;
+      font-family: futuram;
+      font-size: 2vh;
+      margin-top: 2vh;
+      margin-bottom: 20vh;
+      margin-left: 5vh;
+      margin-right: 5vh;
+      text-align: left;
+    }
+  }
+
+  /* Medium desktop */
+@media only screen and (min-width: 751px){
+  .cuerpo {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+  
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    margin-top: 20vh;
+    }
+    #mario {
+  
+        background-color: transparent;
+        height: 30vh;
+        margin-top: 15vh;
+    }
+    .nombre-m {
+        background-color: transparent;
+        font-family: luchita;
+        font-size: 9vh;
+  
+        margin-top: 4vh;
+    }
+    .texto-m {
+      background-color: transparent;
+      font-family: futuram;
+      font-size: 2vh;
+      margin-top: 2vh;
+      margin-bottom: 20vh;
+      margin-left: 5vh;
+      margin-right: 5vh;
+      text-align: left;
+      width: 80vh;
+    }
+  }
+
+  /* x large desktop */
+@media only screen and (min-width: 1920px){
+  .cuerpo {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  margin-top: 20vh;
+  }
+  #mario {
+
+      background-color: transparent;
+      height: 30vh;
+  }
+  .nombre-m {
+      background-color: transparent;
+      font-family: luchita;
+      font-size: 9vh;
+
+      margin-top: 4vh;
+  }
+  .texto-m {
+    background-color: transparent;
+    font-family: futuram;
+    font-size: 2vh;
+    margin-top: 2vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    text-align: left;
+  }
+}
+
+/* { ••• TERMINA: ABOUT ----------------------*/
+
+/*----------------------------------------------------------------------------------------------{ ••• OBRA */
+
+  .obra-mario {
+    background-color: rgb(255, 255, 255);
+    margin-top: 0;
+    width: fit-content;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    }
+
+  .skins1-contenedor {
+    background-color: transparent;
+    margin: 2vh;
+    margin-top: 5vh;
+  }
+
+  #skins1 {
+    background-color: transparent;
+    margin: 1vh;
+    width: 50vh;
+  }
+
+  .skins2-contenedor {
+    background-color: transparent;
+    margin: 2vh;
+  }
+
+  #skins2 {
+    background-color: transparent;
+    margin: 1vh;
+    width: 50vh;
+  }
+
+  .skins3-contenedor {
+    background-color: transparent;
+    margin: 2vh;
+  }
+
+  #skins3 {
+    background-color: transparent;
+    margin: 1vh;
+    width: 50vh;
+  }
+
+  .skins4-contenedor {
+    background-color: transparent;
+    margin: 2vh;
+  }
+
+  #skins4 {
+    background-color: transparent;
+    margin: 1vh;
+    width: 50vh;
+  }
+
+  .skins5-contenedor {
+    background-color: transparent;
+    margin: 2vh;
+  }
+
+  #skins5 {
+    background-color: transparent;
+    margin: 1vh;
+    width: 50vh;
+  }
+
+  .skins6-contenedor {
+    background-color: transparent;
+    margin: 2vh;
+  }
+
+  #skins6 {
+    background-color: transparent;
+    margin: 1vh;
+    width: 50vh;
+  }
+
+  .skins7-contenedor {
+    background-color: transparent;
+    margin: 2vh;
+  }
+
+  #skins7 {
+    background-color: transparent;
+    margin: 1vh;
+    width: 50vh;
+  }
+
+  .skins8-contenedor {
+    background-color: transparent;
+    margin: 2vh;
+  }
+
+  #skins8 {
+    background-color: transparent;
+    margin: 1vh;
+    width: 50vh;
+  }
+
+  .rashitosarriba-m-contenedor {
+    background-color: transparent;
+    width: 100%;
+    margin-bottom: -1vh;
+  }
+
+/* { ••• TERMINA: OBRA ----------------------*/
+
+/*----------------------------------------------------------------------------------------------{ ••• PIE */ 
+
+  .contenedor-pie-mario{
+
+    background-color: #000000;
+    width: 100%;
+    height: 10vh;
+    
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+  
+  }
+  
+  .contenedor-pagina-mario{
+    background-color: transparent;
+    width: auto;
+    margin-top: 0vh;
+  }
+  
+  #pagina-mario {
+    font-family: futuram;
+    font-size: 2.2vh;
+    background-color: transparent;
+    color: var(--color1);
+  }
+  
+  .contenedor-slash-mario {
+    background-color: transparent;
+    width: auto;
+    margin-top: 0vh;
+  }
+  
+  #slash-mario {
+    font-family: futuram;
+    font-size: 2.2vh;
+    margin-left: 1vh;
+    background-color: transparent;
+    color: var(--color1);
+  }
+  
+  .contenedor-ig-mario {
+    background-color: transparent;
+    width: 2vh;
+    margin-left: 1vh;
+    margin-top: .1vh;
+  
+  }
+  
+  #ig-mario{
+    background-color: transparent;
+    color: var(--color1);
+  }
+
+  /* { ••• TERMINA: PIE ----------------------*/
+  
+  /*•••••••••••••••••••••• El tiempo viene, el tiempo se va... como la marea ••••••••••••••••••••••••*/
+
+  /*----------------------------------------------------------------------------------------------{ ••• JAIME FRAGOSO */
+
+    .contenedor-jaime {
+
+      display: flex;
+      flex-direction: column;
+  
+      
+  }
+  
+  /*----------------------------------------------------------------------------------------------{ ••• CABEZERA */
+  
+  .contenedor-cabezera-jaime {
+  
+    position: fixed;
+  
+      background-color: transparent;
+  
+  }
+  
+  .cabezera-jaime {
+  
+      background-color: #000000;
+  
+  
+      padding: 0;
+      height: 8vh;
+  
+     
+  }
+  
+  .cabeza-lobo-jaime {
+      background-color: transparent;
+  }
+  
+  .inicio-jaime {
+      background-color: transparent;
+  }
+  
+  #lobo-jaime {
+  
+    z-index: 400;
+  
+      position: fixed;
+      background-color: transparent;
+      height: 4vh;
+      top: 0;
+      left: 0;
+      margin: 2vh;
+  }
+  
+  .cabezera-jaime .menu-wrap {
+  
+      top: 0;
+      right: 0;
+      margin-right: 6vh;
+  
+      background-color: transparent;
+  
+      position: fixed;
+      z-index: 4;
+    }
+    
+  .cabezera-jaime .menu-wrap .toggler {
+  
+      background-color: transparent;
+  
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+      opacity: 0;
+    }
+    
+  .cabezera-jaime .menu-wrap .hamburger {
+  
+      background-color: transparent;
+  
+      position: absolute;
+      top: 1vh;
+      left: 0;
+      z-index: 1;
+      width: 40px;
+      height: 40px;
+      padding: 1rem;
+      background: var(--primary-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+  /* HAMBURGUESA */
+  .cabezera-jaime .menu-wrap .hamburger > div {
+  
+      background-color: transparent;
+  
+      position: relative;
+      flex: none;
+      width: 100%;
+      height: 2px;
+      background: var(--color1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s ease;
+    }
+  
+    .sangrecilla {
+      background-color: transparent;
+      width: fit-content;
+    }
+  
+    #sangron {
+      background-color: transparent;
+      width: fit-content;
+    }
+  
+    /* { ••• TERMINA: CABEZERA ----------------------*/
+  
+    /*----------------------------------------------------------------------------------------------{ ••• ABOUT */
+  
+    .cuerpo {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+  
+      align-items: center;
+      justify-content: space-around;
+      height: 100%;
+      margin-top: 20vh;
+  
+    }
+
+  /* cellphones */
+@media only screen and (min-width: 321px) and (max-width: 750px){
+  #jaime {
+      background-color: transparent;
+      height: 30vh;
+  }
+  .nombre-jaime {
+      background-color: transparent;
+      font-family: luchita;
+      font-size: 9vh;
+      margin-top: 4vh;
+  }
+  .texto-jaime {
+    background-color: transparent;
+    font-family: futuram;
+    font-size: 2vh;
+    margin-top: 2vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    margin-bottom: 6vh;
+    text-align: left;
+  }
+}
+
+  /* Medium desktop */
+@media only screen and (min-width: 751px){
+  #jaime {
+    background-color: transparent;
+    height: 30vh;
+}
+.nombre-jaime {
+    background-color: transparent;
+    font-family: luchita;
+    font-size: 9vh;
+    margin-top: 4vh;
+}
+.texto-jaime {
+  background-color: transparent;
+  font-family: futuram;
+  font-size: 2vh;
+  margin-top: 2vh;
+  margin-left: 5vh;
+  margin-right: 5vh;
+  margin-bottom: 6vh;
+  text-align: left;
+}
+}
+
+  /* x large desktop */
+@media only screen and (min-width: 1920px){
+  #jaime {
+    background-color: transparent;
+    height: 30vh;
+    margin-top: 15vh;
+}
+.nombre-jaime {
+    background-color: transparent;
+    font-family: luchita;
+    font-size: 9vh;
+    margin-top: 4vh;
+}
+.texto-jaime {
+  background-color: transparent;
+  font-family: futuram;
+  font-size: 2vh;
+  margin-top: 2vh;
+  margin-left: 5vh;
+  margin-right: 5vh;
+  margin-bottom: 6vh;
+  text-align: left;
+  width: 80vh;
+}
+}
+    
+    #rashitosarriba-jaime {
+      background-color: transparent;
+      width: 100%;
+      height: 100%;
+      margin-top: 10vh;
+      margin-bottom: -3vh;
+    }
+  
+  /* { ••• TERMINA: ABOUT ----------------------*/
+  
+  /*----------------------------------------------------------------------------------------------{ ••• OBRA */
+  
+    .negro1-jaime {
+      background-color: #000;
+      margin-top: 0;
+      width: fit-content;
+      height: fit-content;
+  
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      }
+    
+    .huesos-contenedor {
+      background-color: transparent;
+      margin: 2vh;
+    }
+  
+    #huesos {
+      background-color: transparent;
+      margin: 1vh;
+      width: 50vh;
+    }
+
+    .cavernario-contenedor {
+      background-color: transparent;
+      margin: 2vh;
+      margin-bottom: 6vh;
+    }
+  
+    #cavernario {
+      background-color: transparent;
+      margin: 1vh;
+      width: 50vh;
+    }
+
+    .blanco1-jaime {
+      background-color: rgb(255, 255, 255);
+      margin-top: 0;
+      width: fit-content;
+      height: fit-content;
+      margin-top: 4vh;
+  
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      }
+    
+    .corage-contenedor {
+      background-color: transparent;
+      margin: 2vh;
+      margin-bottom: 5vh;
+    }
+  
+    #corage {
+      background-color: transparent;
+      margin: 1vh;
+      width: 50vh;
+    }
+
+    .negro2-jaime {
+      background-color: rgb(0, 0, 0);
+      margin-top: 0;
+      width: fit-content;
+      height: fit-content;
+  
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      }
+    
+    .arena-contenedor {
+      background-color: transparent;
+      margin: 2vh;
+      margin-bottom: 5vh;
+      margin-top: 7vh;
+    }
+  
+    #arena {
+      background-color: transparent;
+      margin: 1vh;
+      width: 50vh;
+    }
+
+    .blanco2-jaime {
+      background-color: rgb(255, 255, 255);
+      margin-top: 0;
+      width: fit-content;
+      height: fit-content;
+  
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      }
+
+    .sangreabajo-jaime-contenedor {
+      background-color: transparent;
+      width: 100%;
+      height: 100%;
+      margin-top: -2vh;
+      margin-bottom: 4vh;
+    }  
+    
+    #sangreabajo-jaime {
+      background-color: transparent;
+      width: 100%;
+    }
+    
+    .caguama-contenedor {
+      background-color: transparent;
+      margin: 2vh;
+    }
+  
+    #caguama {
+      background-color: transparent;
+      margin: 1vh;
+      width: 50vh;
+    }
+
+    .submarino-contenedor {
+      background-color: transparent;
+      margin: 2vh;
+    }
+  
+    #submarino {
+      background-color: transparent;
+      margin: 1vh;
+      width: 50vh;
+    }
+
+    .pastor-contenedor {
+      background-color: transparent;
+      margin: 2vh;
+    }
+  
+    #pastor {
+      background-color: transparent;
+      margin: 1vh;
+      width: 50vh;
+    }
+
+    .aguacate-contenedor {
+      background-color: transparent;
+      margin: 2vh;
+    }
+  
+    #aguacate {
+      background-color: transparent;
+      margin: 1vh;
+      width: 50vh;
+    }
+
+    .rashitosarriba2-jaime-contenedor {
+      background-color: transparent;
+      width: 100%;
+      margin-bottom: -1vh;
+    }
+
+    /* { ••• TERMINA: OBRA ----------------------*/
+
+/*----------------------------------------------------------------------------------------------{ ••• PIE */ 
+
+  .contenedor-pie-jaime{
+
+    background-color: #000000;
+    width: 100%;
+    height: 10vh;
+    
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+  
+  }
+  
+  .contenedor-pagina-jaime{
+    background-color: transparent;
+    width: auto;
+    margin-top: 0vh;
+  }
+  
+  #pagina-jaime {
+    font-family: futuram;
+    font-size: 2.2vh;
+    background-color: transparent;
+    color: var(--color1);
+  }
+  
+  .contenedor-slash-jaime {
+    background-color: transparent;
+    width: auto;
+    margin-top: 0vh;
+  }
+  
+  #slash-jaime {
+    font-family: futuram;
+    font-size: 2.2vh;
+    margin-left: 1vh;
+    background-color: transparent;
+    color: var(--color1);
+  }
+  
+  .contenedor-ig-jaime {
+    background-color: transparent;
+    width: 2vh;
+    margin-left: .6vh;
+    margin-top: .1vh;
+  
+  }
+  
+  #ig-jaime{
+    background-color: transparent;
+    color: var(--color1);
+  }
+
+ /* { ••• TERMINA: PIE ----------------------*/
+  
+  /*•••••••••••••••••••••• To watch the come, as if it was an unknown... ••••••••••••••••••••••••*/
+
+  /*----------------------------------------------------------------------------------------------{ ••• ROBERTO JIMÉNEZ */
+
+    .contenedor-rob {
+
+      display: flex;
+      flex-direction: column;
+  
+      
+  }
+  
+  /*----------------------------------------------------------------------------------------------{ ••• CABEZERA */
+  
+  .contenedor-cabezera-rob {
+  
+    position: fixed;
+  
+      background-color: transparent;
+  
+  }
+  
+  .cabezera-rob {
+  
+      background-color: #000000;
+  
+  
+      padding: 0;
+      height: 8vh;
+  
+     
+  }
+  
+  .cabeza-lobo-rob {
+      background-color: transparent;
+  }
+  
+  .inicio-rob{
+      background-color: transparent;
+  }
+  
+  #lobo-rob {
+  
+    z-index: 400;
+  
+      position: fixed;
+      background-color: transparent;
+      height: 4vh;
+      top: 0;
+      left: 0;
+      margin: 2vh;
+  }
+  
+  .cabezera-rob .menu-wrap {
+  
+      top: 0;
+      right: 0;
+      margin-right: 6vh;
+  
+      background-color: transparent;
+  
+      position: fixed;
+      z-index: 4;
+    }
+    
+  .cabezera-rob .menu-wrap .toggler {
+  
+      background-color: transparent;
+  
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+      opacity: 0;
+    }
+    
+  .cabezera-rob .menu-wrap .hamburger {
+  
+      background-color: transparent;
+  
+      position: absolute;
+      top: 1vh;
+      left: 0;
+      z-index: 1;
+      width: 40px;
+      height: 40px;
+      padding: 1rem;
+      background: var(--primary-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+  /* HAMBURGUESA */
+  .cabezera-rob .menu-wrap .hamburger > div {
+  
+      background-color: transparent;
+  
+      position: relative;
+      flex: none;
+      width: 100%;
+      height: 2px;
+      background: var(--color1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s ease;
+    }
+  
+    .sangrecilla {
+      background-color: transparent;
+      width: fit-content;
+    }
+  
+    #sangron {
+      background-color: transparent;
+      width: fit-content;
+    }
+  
+    /* { ••• TERMINA: CABEZERA ----------------------*/
+  
+    /*----------------------------------------------------------------------------------------------{ ••• ABOUT */
+  
+    .cuerpo {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+  
+      align-items: center;
+      justify-content: space-around;
+      height: 100%;
+      margin-top: 20vh;
+  
+    }
+
+  /* cellphones */
+@media only screen and (min-width: 321px) and (max-width: 750px){
+  #rob {
+    background-color: transparent;
+    height: 30vh;
+  }
+  .nombre-r {
+    background-color: transparent;
+    font-family: luchita;
+    font-size: 7vh;
+    margin-top: 4vh;
+  }
+  .texto-r {
+    background-color: transparent;
+    font-family: futuram;
+    font-size: 2vh;
+    margin-top: 2vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    margin-bottom: 6vh;
+    text-align: left;
+  }
+}
+
+  /* Medium desktop */
+@media only screen and (min-width: 751px){
+  #rob {
+    background-color: transparent;
+    height: 30vh;
+    margin-top: 15vh;
+  }
+  .nombre-r {
+    background-color: transparent;
+    font-family: luchita;
+    font-size: 7vh;
+    margin-top: 4vh;
+  }
+  .texto-r {
+    background-color: transparent;
+    font-family: futuram;
+    font-size: 2vh;
+    margin-top: 2vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    margin-bottom: 6vh;
+    text-align: left;
+    width: 80vh;
+  }
+}
+
+  /* x large desktop */
+@media only screen and (min-width: 1920px)
+  {#rob {
+    background-color: transparent;
+    height: 30vh;
+    margin-top: 15vh;
+  }
+  .nombre-r {
+    background-color: transparent;
+    font-family: luchita;
+    font-size: 7vh;
+    margin-top: 4vh;
+  }
+  .texto-r {
+    background-color: transparent;
+    font-family: futuram;
+    font-size: 2vh;
+    margin-top: 2vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    margin-bottom: 6vh;
+    text-align: left;
+    width: 80vh;
+  }
+}
+  
+/* { ••• TERMINA: ABOUT ----------------------*/
+  
+/*----------------------------------------------------------------------------------------------{ ••• OBRA */
+
+/* cellphones */
+@media only screen and (min-width: 321px) and (max-width: 750px){
+  .blanco1-rob {
+    background-color: rgb(255, 255, 255);
+    margin-top: -2vh;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+}
+
+/* Medium desktop */
+@media only screen and (min-width: 751px){
+  .blanco1-rob {
+    background-color: rgb(255, 255, 255);
+    margin-top: 6vh;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+}
+
+/* x large desktop */
+@media only screen and (min-width: 1920px){
+    .blanco1-rob {
+      background-color: rgb(255, 255, 255);
+      margin-top: 6vh;
+      width: fit-content;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      }
+}
+    
+    .koolaidman-contenedor {
+      background-color: transparent;
+      margin: 2vh;
+      margin-bottom: -3vh;
+    }
+  
+    #koolaidman {
+      background-color: transparent;
+      margin: 1vh;
+      width: 50vh;
+    }
+    
+    .peje-contenedor {
+      background-color: transparent;
+      margin: 2vh;
+    }
+  
+    #peje {
+      background-color: transparent;
+      margin: 1vh;
+      width: 50vh;
+    }
+
+    .ojo1-contenedor {
+      background-color: transparent;
+      margin: 2vh;
+      margin-bottom: -5vh;
+    }
+  
+    #ojo1 {
+      background-color: transparent;
+      margin: 1vh;
+      width: 50vh;
+    }
+
+  /* cellphones */
+@media only screen and (min-width: 321px) and (max-width: 750px){
+  .ojo2-contenedor {
+    background-color: transparent;
+    margin: 2vh;
+    margin-bottom: -6vh;
+  }
+}
+  /* Medium desktop */
+@media only screen and (min-width: 751px){
+  .ojo2-contenedor {
+    background-color: transparent;
+    margin: 2vh;
+    margin-bottom: -15vh;
+  }
+}
+  /* x large desktop */
+@media only screen and (min-width: 1920px){
+    .ojo2-contenedor {
+      background-color: transparent;
+      margin: 2vh;
+      margin-bottom: -15vh;
+    }
+}
+  
+    #ojo2 {
+      background-color: transparent;
+      margin: 1vh;
+      width: 50vh;
+    }
+
+    .sangrearriba-rob-contenedor {
+      background-color: transparent;
+      width: 100%;
+      margin-bottom: -1vh;
+    }
+
+    #sangrearriba-rob {
+      background-color: transparent;
+    }
+
+    .rojo1-rob {
+      background-color: rgb(255, 0, 0);
+      margin-top: 0;
+      width: fit-content;
+      height: fit-content;
+  
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      }
+
+    .piedrita-contenedor {
+      background-color: transparent;
+      margin: 2vh;
+      margin-top: 4vh;
+    }
+    
+    #piedrita {
+      background-color: transparent;
+      margin: 1vh;
+      width: 50vh;
+    }
+
+    .chains-contenedor {
+      background-color: transparent;
+      margin: 2vh;
+    }
+    
+    #chains {
+      background-color: transparent;
+      margin: 1vh;
+      width: 50vh;
+    }
+
+    .knife-contenedor {
+      background-color: transparent;
+      margin: 2vh;
+    }
+    
+    #knife {
+      background-color: transparent;
+      margin: 1vh;
+      width: 50vh;
+    }
+
+    .rashitosarriba-rob-contenedor {
+      background-color: transparent;
+      width: 100%;
+      margin-bottom: -1vh;
+    }
+
+    #rashitosarriba-rob {
+      background-color: transparent;
+    }
+
+/* { ••• TERMINA: OBRA ----------------------*/
+
+/*----------------------------------------------------------------------------------------------{ ••• PIE */ 
+
+  .contenedor-pie-rob {
+
+    background-color: #000000;
+    width: 100%;
+    height: 10vh;
+    
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+  
+  }
+  
+  .contenedor-pagina-rob {
+    background-color: transparent;
+    width: auto;
+    margin-top: 0vh;
+  }
+  
+  #pagina-rob {
+    font-family: futuram;
+    font-size: 2.2vh;
+    background-color: transparent;
+    color: var(--color1);
+  }
+  
+  .contenedor-slash-rob {
+    background-color: transparent;
+    width: auto;
+    margin-top: 0vh;
+  }
+  
+  #slash-rob {
+    font-family: futuram;
+    font-size: 2.2vh;
+    margin-top: .2vh;
+    margin-left: 1vh;
+    background-color: transparent;
+    color: var(--color1);
+  }
+  
+  
+  .contenedor-ig-rob {
+    background-color: transparent;
+    width: 2vh;
+    margin-left: .6vh;
+    margin-top: .1vh;
+  
+  }
+  
+  #ig-rob {
+    background-color: transparent;
+    color: var(--color1);
+  }
+  
+  /* { ••• TERMINA: TERMINA PIE ----------------------*/
+      
