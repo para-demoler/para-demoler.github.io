@@ -1,10 +1,18 @@
-function update(e){
-  var x = e.clientX || e.touches[0].clientX
-  var y = e.clientY || e.touches[0].clientY
+function move_flashlight(x, y) {
+  let flashlight = document.querySelector("#flashlight")
+  let top = parseInt(getComputedStyle(flashlight).top)
+  let left = parseInt(getComputedStyle(flashlight).left)
 
-  document.documentElement.style.setProperty('--cursorX', x + 'px')
-  document.documentElement.style.setProperty('--cursorY', y + 'px')
+
+
+flashlight.style.transform = `translate(${x - 50 - left}px,${y - 50 - top}px)`
 }
 
-document.addEventListener('mousemove',update)
-document.addEventListener('touchmove',update)
+document.body.addEventListener("mousemove", function (e) {
+  move_flashlight(e.clientX, e.clientY)
+})
+
+document.body.addEventListener("click", function (e) {
+  window.location.href = "inicio.html"
+})
+
